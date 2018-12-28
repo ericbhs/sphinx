@@ -105,3 +105,87 @@ The use ``:ref:`` like this :
     ...bla bla bla, see :ref:`my-reference-label`.
     
 Example : ...bla bla bla, see :ref:`my-reference-label`.
+
+Render math formulas as images (uses LaTeX)
+===========================================
+
+- Install a latex distrib (Windows : Miktex for example)
+- In ``conf.py`` add the corresponding extension and the paths to the binaries :
+
+.. code-block:: python
+
+    # Add any Sphinx extension module names here, as strings. They can be
+    # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+    # ones.
+    extensions = [
+        'sphinx.ext.imgmath'
+    ]
+
+    # the documentation of the two following binaries
+    # those paths works on Windows
+    imgmath_latex=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe"
+    imgmath_dvipng=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe"
+    
+- Add Latex-like math formulas like this :
+
+.. code-block:: rst
+
+    .. math::
+
+       (a + b)^2  &=  (a + b)(a + b) \\
+                  &=  a^2 + 2ab + b^2
+                  
+*Result :*
+                  
+.. math::
+
+   (a + b)^2  &=  (a + b)(a + b) \\
+              &=  a^2 + 2ab + b^2
+                  
+.. code-block:: rst
+
+    .. math::
+       :nowrap:
+
+       \begin{eqnarray}
+          y    & = & ax^2 + bx + c \\
+          f(x) & = & x^2 + 2xy + y^2
+       \end{eqnarray}
+       
+*Result :*
+       
+.. math::
+   :nowrap:
+
+   \begin{eqnarray}
+      y    & = & ax^2 + bx + c \\
+      f(x) & = & x^2 + 2xy + y^2
+   \end{eqnarray}
+
+.. code-block:: rst
+
+    .. math:: e^{i\pi} + 1 = 0
+       :label: euler
+
+*Result :*    
+
+.. math:: e^{i\pi} + 1 = 0
+   :label: euler
+
+.. code-block:: rst
+
+    Euler's identity, equation :eq:`euler`, was elected one of the most beautiful mathematical formulas. 
+
+*Result :*
+
+Euler's identity, equation :eq:`euler`, was elected one of the most beautiful mathematical formulas. 
+    
+Inline equations :
+
+.. code-block:: rst
+
+    Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
+    
+*Result :*
+
+Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.

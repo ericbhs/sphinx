@@ -124,6 +124,72 @@ Row 3 Col 1                 Row 3 Col 2
 </div>
 <p>Example : …bla bla bla, see <a class="reference internal" href="#my-reference-label"><span class="std std-ref">Add in-line code extract</span></a>.</p>
 </div>
+<div class="section" id="render-math-formulas-as-images-uses-latex">
+<h1>Render math formulas as images (uses LaTeX)<a class="headerlink" href="#render-math-formulas-as-images-uses-latex" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Install a latex distrib (Windows : Miktex for example)</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> add the corresponding extension and the paths to the binaries :</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.imgmath&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># the documentation of the two following binaries</span>
+<span class="c1"># those paths works on Windows</span>
+<span class="n">imgmath_latex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe&quot;</span>
+<span class="n">imgmath_dvipng</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Add Latex-like math formulas like this :</li>
+</ul>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">math</span><span class="p">::</span>
+
+   (a + b)^2  &amp;=  (a + b)(a + b) \\
+              &amp;=  a^2 + 2ab + b^2
+</pre></div>
+</div>
+<p><em>Result :</em></p>
+<div class="math">
+<p><img src="_images/math/d72d479aeb1e7c2ee77dbd4d83dea7b0061bc75b.png" alt="(a + b)^2  &amp;=  (a + b)(a + b) \\
+           &amp;=  a^2 + 2ab + b^2"/></p>
+</div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">math</span><span class="p">::</span>
+   <span class="nc">:nowrap:</span>
+
+   \begin{eqnarray}
+      y    &amp; = &amp; ax^2 + bx + c \\
+      f(x) &amp; = &amp; x^2 + 2xy + y^2
+   \end{eqnarray}
+</pre></div>
+</div>
+<p><em>Result :</em></p>
+<div class="math">
+<p><img src="_images/math/3f968532cb9ba4fddba2290741a3e138810f2cae.png" alt="\begin{eqnarray}
+   y    &amp; = &amp; ax^2 + bx + c \\
+   f(x) &amp; = &amp; x^2 + 2xy + y^2
+\end{eqnarray}"/></p>
+</div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">math</span><span class="p">::</span> e^{i\pi} + 1 = 0
+   <span class="nc">:label:</span> <span class="nf">euler</span>
+</pre></div>
+</div>
+<p><em>Result :</em></p>
+<div class="math" id="equation-euler">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-euler" title="Permalink to this equation">¶</a></span><img src="_images/math/a5bdd41fa273e15e748fe95f87c2017faaf08fa7.png" alt="e^{i\pi} + 1 = 0"/></p>
+</div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Euler&#39;s identity, equation <span class="na">:eq:</span><span class="nv">`euler`</span>, was elected one of the most beautiful mathematical formulas.
+</pre></div>
+</div>
+<p><em>Result :</em></p>
+<p>Euler’s identity, equation <a class="reference internal" href="#equation-euler">(1)</a>, was elected one of the most beautiful mathematical formulas.</p>
+<p>Inline equations :</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Since Pythagoras, we know that <span class="na">:math:</span><span class="nv">`a^2 + b^2 = c^2`</span>.
+</pre></div>
+</div>
+<p><em>Result :</em></p>
+<p>Since Pythagoras, we know that <img class="math" src="_images/math/d4d3268036aaf8e626b870edc6fc001d22f3f96e.png" alt="a^2 + b^2 = c^2"/>.</p>
+</div>
 
 
           </div>
