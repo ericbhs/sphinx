@@ -44,8 +44,8 @@ extensions = [
 
 # the documentation of the two following binaries
 # those paths works on Windows
-imgmath_latex=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe"
-imgmath_dvipng=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe"
+# imgmath_latex=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe"
+# imgmath_dvipng=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -110,7 +110,7 @@ Render math formulas as images (uses LaTeX)
 ===========================================
 
 - Install a latex distrib (Windows : Miktex for example)
-- In ``conf.py`` add the corresponding extension and the paths to the binaries :
+- In ``conf.py`` add the corresponding extension :
 
 .. code-block:: python
 
@@ -120,11 +120,6 @@ Render math formulas as images (uses LaTeX)
     extensions = [
         'sphinx.ext.imgmath'
     ]
-
-    # the documentation of the two following binaries
-    # those paths works on Windows
-    imgmath_latex=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe"
-    imgmath_dvipng=r"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe"
     
 - Add Latex-like math formulas like this :
 

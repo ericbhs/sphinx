@@ -128,7 +128,7 @@ Row 3 Col 1                 Row 3 Col 2
 <h1>Render math formulas as images (uses LaTeX)<a class="headerlink" href="#render-math-formulas-as-images-uses-latex" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>Install a latex distrib (Windows : Miktex for example)</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> add the corresponding extension and the paths to the binaries :</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> add the corresponding extension :</li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
 <span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
@@ -136,11 +136,6 @@ Row 3 Col 1                 Row 3 Col 2
 <span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;sphinx.ext.imgmath&#39;</span>
 <span class="p">]</span>
-
-<span class="c1"># the documentation of the two following binaries</span>
-<span class="c1"># those paths works on Windows</span>
-<span class="n">imgmath_latex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\latex.exe&quot;</span>
-<span class="n">imgmath_dvipng</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\dvipng.exe&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
